@@ -1,0 +1,106 @@
+Dokumentace pro kód využívající framework Flask:
+
+## Název projektu
+
+Název projektu: Flask Registrace Ucastniku
+
+## Popis
+
+Tento projekt je jednoduchá webová aplikace napsaná v jazyce Python s využitím frameworku Flask. Aplikace umožňuje uživatelům zaregistrovat se s informacemi jako přezdívka, schopnost plavat a přítomnost kamaráda s kanoe. Registrovaní účastníci jsou zobrazováni na první stránce.
+
+## Struktura projektu
+
+### Adresářová struktura
+
+```
+- static/
+  - style.css
+- templates/
+  - druha_stranka.html
+  - prvni_stranka.html
+  - registrace.html
+- app.py
+```
+
+### Popis adresářů a souborů
+
+- **static/:** Obsahuje statické soubory, jako např. styly pro CSS.
+- **templates/:** Obsahuje HTML šablony pro jednotlivé stránky.
+- **app.py:** Hlavní soubor obsahující kód webové aplikace.
+
+## Instalace
+
+1. Nainstalujte Flask pomocí příkazu:
+   ```
+   pip install flask
+   ```
+
+2. Spusťte aplikaci pomocí příkazu:
+   ```
+   python app.py
+   ```
+
+Aplikace bude dostupná na adrese `http://localhost:8080/`.
+
+## Funkcionalita
+
+### 1. `index()`
+
+- **Popis:** Zobrazuje první stránku aplikace, která obsahuje seznam registrovaných účastníků.
+- **HTTP metoda:** GET
+
+### 2. `druha_stranka()`
+
+- **Popis:** Zobrazuje druhou stránku s tajnou zprávou.
+- **HTTP metody:** GET, POST
+
+### 3. `registrace()`
+
+- **Popis:** Zobrazuje formulář pro registraci nového účastníka. Při odeslání formuláře provádí validaci a přidává nového účastníka do seznamu.
+- **HTTP metody:** GET, POST
+
+## API Endpoints
+
+1. **`GET /`**
+   - Získání seznamu registrovaných účastníků.
+
+2. **`GET /druha_stranka`**
+   - Získání druhé stránky s tajnou zprávou.
+
+3. **`GET /registrace`**
+   - Získání formuláře pro registraci nového účastníka.
+
+4. **`POST /registrace`**
+   - Přidání nového účastníka do seznamu na základě odeslaného formuláře.
+
+## Validace formuláře
+
+1. **Schopnost plavat:**
+   - Pouze pokud je hodnota 'je_plavec' rovna '1', je registrace povolena.
+
+2. **Přezdívka:**
+   - Musí mít délku mezi 2 a 20 znaky.
+   - Obsahuje pouze čísla a písmena bez mezer.
+
+3. **Kanoe kamarád:**
+   - Musí mít délku mezi 2 a 20 znaky.
+   - Obsahuje pouze čísla a písmena bez mezer.
+
+## Spuštění aplikace
+
+Pro spuštění aplikace použijte příkaz:
+
+```bash
+python app.py
+```
+
+Aplikace bude dostupná na adrese `http://localhost:8080/`.
+
+## Autor
+
+Autor: [Vaše Jméno]
+Kontakt: [Váš e-mail]
+
+## Licence
+
+Tento projekt je licencován pod [typ licence]. Pro více informací se podívejte do souboru LICENSE.
